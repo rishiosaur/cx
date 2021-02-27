@@ -46,10 +46,7 @@ class MyDocument extends Document {
 							property="og:description"
 							content="I'm Rishi Kothari, a 15-year-old developer that's excited about backend technologies with GraphQL, and the intersection of CS Theory with social good."
 						/>
-						<meta
-							property="og:image"
-							content="/me.png"
-						/>
+						<meta property="og:image" content="/me.png" />
 
 						<meta property="twitter:card" content="summary_large_image" />
 						<meta property="twitter:url" content="https://rishi.cx/" />
@@ -61,10 +58,7 @@ class MyDocument extends Document {
 							property="twitter:description"
 							content="I'm Rishi Kothari, a 15-year-old developer that's excited about backend technologies with GraphQL, and the intersection of CS Theory with social good."
 						/>
-						<meta
-							property="twitter:image"
-							content="/me.png"
-						/>
+						<meta property="twitter:image" content="/me.png" />
 					</head>
 					<Head />
 
