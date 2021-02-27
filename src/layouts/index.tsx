@@ -36,13 +36,15 @@ export const MainStyle: React.FC = ({ children }) => {
 						}),
 					}}>
 					<Link href="/">
-						<Button >
+						<Button>
 							<Link href="/">index</Link>
 						</Button>
 					</Link>
-					{!isSmall &&<Button>
-						<Link href="mailto:hey@rishi.cx">hey@rishi.cx</Link>
-					</Button>}
+					{!isSmall && (
+						<Button>
+							<Link href="mailto:hey@rishi.cx">hey@rishi.cx</Link>
+						</Button>
+					)}
 
 					<Button>
 						<Link href="/socials">socials</Link>

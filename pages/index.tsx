@@ -294,7 +294,8 @@ export default function Home() {
 						}}>
 						i'm always up for a chat with interesting people!
 					</motion.h2>
-					<br /><br />
+					<br />
+					<br />
 
 					<Text style={{ fontSize: !isSmall ? '2rem' : '1rem' }}>
 						i've recorded talk series in the past and conducted close to 100
