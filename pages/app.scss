@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Shapiro 55 Middle Wide";
+  src: local("Shapiro 55 Middle Wide"), url("/Shapiro.otf") format("opentype");
+  font-display: swap;
+}
+
+
+  body {
+  font-family: 'Shapiro 55 Middle Wide', -apple-system, Helvetica, Arial, Sans-Serif;
+  margin: 0;
+  padding: 0;
+
+  z-index: inherit;
+  // align-content: center;
+}
+
+  h1 {
+    font-size: 9rem;
+    line-height: 90%;
+  }
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+  h2 {
+    line-height: 110%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
