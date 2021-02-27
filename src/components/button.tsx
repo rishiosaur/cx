@@ -42,7 +42,7 @@ export const Button: React.FC<{
 						: {
 								textDecoration: 'underline',
 								// textDecorationStyle: 'wavy',
-								textDecorationSkip: 'ink'
+								textDecorationSkip: 'ink',
 						  }),
 					...styles,
 				}}
