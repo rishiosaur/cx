@@ -35,10 +35,9 @@ export const Blob: React.FC<{
 				)} 20s ease-in-out infinite both`,
 				opacity: 0.7,
 				position: 'absolute',
-				left:  props.startx,
+				left: props.startx,
 				top: props.starty,
 			}}
-
 			onScroll={() => {
 				console.log('scrolled')
 			}}
