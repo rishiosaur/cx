@@ -13,21 +13,21 @@ export const Blob: React.FC<{
 	startx: string
 	starty: string
 	size: string
-}> = ({  colors, startx, starty, size  }) => (
-		<motion.div
-			style={{
-				borderRadius: '30% 50% 20% 40%',
-				backgroundColor: colors[0],
-				background: `radial-gradient(circle, ${colors[0]} 0%,  ${colors[1]} 100%);`,
-				height: size,
-				width: size,
-				animation: `transform 40s ease-in-out infinite both alternate, movement${sample(
-					['1', '2', '3', '4']
-				)} 20s ease-in-out infinite both`,
-				opacity: 0.7,
-				position: 'absolute',
-				left: startx,
-				top: starty,
-			}}
-		/>
-	)
+}> = ({ colors, startx, starty, size }) => (
+	<motion.div
+		style={{
+			borderRadius: '30% 50% 20% 40%',
+			backgroundColor: colors[0],
+			background: `radial-gradient(circle, ${colors[0]} 0%,  ${colors[1]} 100%);`,
+			height: size,
+			width: size,
+			animation: `transform 40s ease-in-out infinite both alternate, movement${sample(
+				['1', '2', '3', '4']
+			)} 20s ease-in-out infinite both`,
+			opacity: 0.7,
+			position: 'absolute',
+			left: startx,
+			top: starty,
+		}}
+	/>
+)
