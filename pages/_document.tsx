@@ -48,7 +48,7 @@ class MyDocument extends Document {
 						/>
 						<meta
 							property="og:image"
-							content="https://i.ibb.co/TPKjZbS/1604320263101.jpg"
+							content="/me.png"
 						/>
 
 						<meta property="twitter:card" content="summary_large_image" />
@@ -63,7 +63,7 @@ class MyDocument extends Document {
 						/>
 						<meta
 							property="twitter:image"
-							content="https://i.ibb.co/TPKjZbS/1604320263101.jpg"
+							content="/me.png"
 						/>
 					</head>
 					<Head />
