@@ -36,43 +36,19 @@ export const MainStyle: React.FC = ({ children }) => {
 						}),
 					}}>
 					<Link href="/">
-						<Button highlighted={router.route === '/'}>
+						<Button >
 							<Link href="/">index</Link>
 						</Button>
 					</Link>
-					{!isSmall && <h2>hey@rishi.cx</h2>}
+					{!isSmall &&<Button>
+						<Link href="mailto:hey@rishi.cx">hey@rishi.cx</Link>
+					</Button>}
 
-					<Button highlighted={router.route === '/socials'}>
+					<Button>
 						<Link href="/socials">socials</Link>
 					</Button>
 				</div>
 				{children}
-
-				<div
-					style={{
-						display: 'flex',
-						marginTop: '15%',
-						flexDirection: 'row',
-						justifyContent: 'space-between',
-						alignContent: 'center',
-						alignItems: 'center',
-
-						...(isSmall && {
-							width: '90%',
-							margin: '0 auto',
-						}),
-					}}>
-					<Link href="/">
-						<Button highlighted={router.route === '/'}>
-							<Link href="/">index</Link>
-						</Button>
-					</Link>
-					{!isSmall && <h2>hey@rishi.cx</h2>}
-
-					<Button highlighted={router.route === '/socials'}>
-						<Link href="/socials">socials</Link>
-					</Button>
-				</div>
 			</div>
 			<div className="blobs">
 				{[

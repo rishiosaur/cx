@@ -294,11 +294,12 @@ export default function Home() {
 						}}>
 						i'm always up for a chat with interesting people!
 					</motion.h2>
-					<br />
+					<br /><br />
+
 					<Text style={{ fontSize: !isSmall ? '2rem' : '1rem' }}>
-						i've conducted talk shows in the past, and i've had close to 100
+						i've recorded talk series in the past and conducted close to 100
 						private coffee chats with people from around the world over the past
-						year. schedule one at{' '}
+						year. i'd love to meet you—schedule one at{' '}
 						<Button styles={{ padding: 0 }} component={motion.span} highlighted>
 							<Link href="https://z.rishi.cx/m">z.rishi.cx/m</Link>
 						</Button>
