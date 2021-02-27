@@ -58,7 +58,7 @@ class MyDocument extends Document {
 							property="twitter:description"
 							content="I'm Rishi Kothari, a 15-year-old developer that's excited about backend technologies with GraphQL, and the intersection of CS Theory with social good."
 						/>
-						<meta property="twitter:image" content="/me.png" />
+						<meta property="twitter:image" content="/me_graphic.png" />
 					</head>
 					<Head />
 
