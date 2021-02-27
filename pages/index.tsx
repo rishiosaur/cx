@@ -45,7 +45,7 @@ export default function Home() {
 						style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
 						current @ petcode
 					</motion.h2>
-					<motion.h1>software, startup & coffee</motion.h1>
+					<motion.h1>software, products & coffee</motion.h1>
 				</motion.section>
 				<motion.h1 {...hoverSettings} style={{ fontSize: '3rem' }}>
 					hey, i'm rishi.

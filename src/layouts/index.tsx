@@ -77,19 +77,19 @@ export const MainStyle: React.FC = ({ children }) => {
 			<div className="blobs">
 				{[
 					{
-						colors: ['#fcbf49', '#f77f00'],
+						colors: ['#4361ee', '#3f37c9'],
 						size: '300px',
 						startx: mode('30rem', '50vw'),
 						starty: mode('10rem', '10vh'),
 					},
 					{
-						colors: ['#fdc500', '#ffd500'],
+						colors: ['#f72585', '#b5179e'],
 						size: '200px',
 						startx: mode('10rem', '50vw'),
 						starty: mode('50rem', '70vh'),
 					},
 					{
-						colors: ['#ff9500', '#ffaa00'],
+						colors: ['#7209b7', '#560bad'],
 						size: '300px',
 						startx: mode('70rem', '1vw'),
 						starty: mode('40rem', '50vh'),
