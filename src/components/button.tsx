@@ -4,14 +4,13 @@ import styles from './button.module.scss'
 
 const Box = motion.div
 
-export const Button: React.FC<{ text?: string; highlighted?: boolean, component?: any, styles?: any, _hover?: any }> = ({
-	text,
-	highlighted,
-	component,
-	children,
-	styles,
-	_hover
-}) => {
+export const Button: React.FC<{
+	text?: string
+	highlighted?: boolean
+	component?: any
+	styles?: any
+	_hover?: any
+}> = ({ text, highlighted, component, children, styles, _hover }) => {
 	const Component = component || motion.h2
 	return (
 		<>
@@ -25,9 +24,7 @@ export const Button: React.FC<{ text?: string; highlighted?: boolean, component?
 					color: theme.colors.background,
 					// borderWidth:'0.25rem',
 					// borderStyle:'solid',
-				..._hover
-
-
+					..._hover,
 				}}
 				style={{
 					opacity: 1,
@@ -39,14 +36,14 @@ export const Button: React.FC<{ text?: string; highlighted?: boolean, component?
 
 					...(!highlighted
 						? {
-							textDecoration: 'none'
-							// textDecorationStyle:'none'
-						}
+								textDecoration: 'none',
+								// textDecorationStyle:'none'
+						  }
 						: {
-							textDecoration: 'underline',
-							textDecorationStyle: 'wavy'
-						}),
-						...styles
+								textDecoration: 'underline',
+								textDecorationStyle: 'wavy',
+						  }),
+					...styles,
 				}}
 				transition={{ ease: 'easeInOut', duration: 0.1 }}>
 				{text || children}
