@@ -12,14 +12,15 @@ import { Button } from '../components/button'
 import theme from '../theme'
 import { fetch } from '../util'
 
-function randomIntFromInterval(min, max) {
-	// min and max included
-	return Math.floor(Math.random() * (max - min + 1) + min)
-}
 
 export const MainStyle: React.FC = ({ children }) => {
 	const router = useRouter()
 	const { scrollYProgress } = useViewportScroll()
+	function randomIntFromInterval(min, max) {
+		// min and max included
+		return Math.floor(Math.random() * (max - min + 1) + min)
+	}
+
 	// const [rot, set] = useState(0);
 	// const rotate = useTransform(scrollYProgress, x => 360*(1-(x/2))).onChange(z => set(z));
 	const isSmall = useMedia('(max-width: 1024px)')
