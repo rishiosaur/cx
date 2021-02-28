@@ -4,6 +4,7 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useMedia } from 'use-media'
 import Link from 'next/link'
+import request from 'graphql-request'
 import { MainStyle } from '../src/layouts'
 import { Button } from '../src/components/button'
 // import Me from '../public/me.jpeg';
@@ -13,15 +14,29 @@ const hoverSettings = {
 	transition: { ease: 'easeInOut', delay: 0.1, duration: 0.3 },
 }
 
-const Text: React.FC<{ style?: any }> = ({ children, style }) => (
-	<motion.h2
-		data-aos="fade-up"
-		style={{ display: 'inline', margin: 0, ...style }}>
-		{children}
-	</motion.h2>
+const Text: React.FC<{ style?: any; truncated?: boolean }> = ({
+	truncated,
+	children,
+	style,
+}) => (
+	<span className={truncated && 'truncated'}>
+		<h2
+			data-aos="fade-up"
+			style={{ display: 'inline', margin: 0, ...style }}
+			className={truncated && 'truncated'}>
+			{children}
+		</h2>
+	</span>
 )
 
-export default function Home() {
+const Home: React.FC<{
+	articles: {
+		description: string
+		title: string
+		createdAt: string
+		id: string
+	}[]
+}> = ({ articles }) => {
 	const { scrollYProgress } = useViewportScroll()
 	const isSmall = useMedia('(max-width: 1024px)')
 	const opacity = useTransform(scrollYProgress, (x) => 1.3 - x)
@@ -310,8 +325,58 @@ export default function Home() {
 						</Button>
 					</Text>
 				</motion.section>
+				<motion.h1>writings</motion.h1>
+				<motion.section>
+					<br />
+					<motion.h2
+						data-aos="fade-up"
+						style={{
+							display: 'inline',
+							margin: 0,
+							fontSize: !isSmall ? '2rem' : '1rem',
+						}}>
+						i also document the occasional thought in my public journal.
+					</motion.h2>
+					<br />
+					<br />
+					<br />
+
+					{articles.map((z) => (
+						<div style={{ marginBottom: '1rem' }}>
+							<div
+								style={{
+									display: 'flex',
+									flexDirection: 'row',
+									alignItems: 'center',
+									marginBottom: '1rem',
+								}}>
+								<Text>{new Date(z.createdAt).toLocaleDateString()}</Text>
+								<Button
+									inverted
+									highlighted
+									component={motion.h2}
+									styles={{ margin: '0 1rem 0 1rem' }}>
+									<Link href={`/writings/${z.id}`}>{z.title}</Link>
+								</Button>
+								{!isSmall && (
+									<Text truncated>
+										{(function (str, num) {
+											// If the length of str is less than or equal to num
+											// just return str--don't truncate it.
+											if (str.length <= num) {
+												return str
+											}
+											// Return str truncated with '...' concatenated to the end of str.
+											return `${str.slice(0, num)}...`
+										})(z.description, 60)}
+									</Text>
+								)}
+							</div>
+						</div>
+					))}
+				</motion.section>
 			</MainStyle>
-			<style jsx>
+			<style global jsx>
 				{`
 					.grid-container {
 						cursor: url('https://images.unsplash.com/photo-1503601350100-26336a6beda2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80')
@@ -411,3 +476,28 @@ export default function Home() {
 		</motion.main>
 	)
 }
+
+export const getStaticProps = async () => {
+	const fetched = await request(
+		'https://api-us-east-1.graphcms.com/v2/ckjq7p0mau50s01z1aio1b4ia/master',
+		`query Query {
+  articles {
+    title
+    description
+    createdAt
+    id
+  }
+}
+`
+	)
+
+	console.log(`stuff${fetched}`)
+
+	return {
+		props: {
+			articles: fetched.articles,
+		},
+	}
+}
+
+export default Home
