@@ -27,7 +27,7 @@ const useStart = () => {
 }
 
 function getColor() {
-	const letters = '456789ABCDEF'.split('')
+	const letters = '4567ABC'.split('')
 	let color = '#'
 	for (let i = 0; i < 6; i++) {
 		color += letters[Math.floor(Math.random() * letters.length)]
@@ -48,8 +48,8 @@ export const Blob: React.FC<{
 			style={{
 				borderRadius: '30% 50% 20% 40%',
 				backgroundColor: colors[0],
-				background: `radial-gradient(circle, ${getColor() || colors[0]} 0%,  ${
-					getColor() || colors[1]
+				background: `radial-gradient(circle, ${colors[0]} 0%,  ${
+				colors[1]
 				} 100%);`,
 				height: size,
 				width: size,
