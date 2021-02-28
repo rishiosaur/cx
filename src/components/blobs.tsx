@@ -48,9 +48,7 @@ export const Blob: React.FC<{
 			style={{
 				borderRadius: '30% 50% 20% 40%',
 				backgroundColor: colors[0],
-				background: `radial-gradient(circle, ${colors[0]} 0%,  ${
-				colors[1]
-				} 100%);`,
+				background: `radial-gradient(circle, ${colors[0]} 0%,  ${colors[1]} 100%);`,
 				height: size,
 				width: size,
 				animation: `transform 40s ease-in-out infinite both alternate, movement${sample(
