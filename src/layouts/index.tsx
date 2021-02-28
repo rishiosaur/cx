@@ -12,7 +12,6 @@ import { Button } from '../components/button'
 import theme from '../theme'
 import { fetch } from '../util'
 
-
 export const MainStyle: React.FC = ({ children }) => {
 	const router = useRouter()
 	const { scrollYProgress } = useViewportScroll()

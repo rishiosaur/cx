@@ -16,24 +16,24 @@ const useStart = () => {
 		// min and max included
 		return Math.floor(Math.random() * (max - min + 1) + min)
 	}
-	return [isSmall
-		? `${randomIntFromInterval(10, 50)}vh`
-		: `${randomIntFromInterval(10, 50)}rem`, isSmall
-		? `${randomIntFromInterval(10, 50)}vh`
-		: `${randomIntFromInterval(10, 50)}rem`]
+	return [
+		isSmall
+			? `${randomIntFromInterval(10, 50)}vh`
+			: `${randomIntFromInterval(10, 50)}rem`,
+		isSmall
+			? `${randomIntFromInterval(10, 50)}vh`
+			: `${randomIntFromInterval(10, 50)}rem`,
+	]
 }
-
-
 
 function getColor() {
-	const letters = '456789ABCDEF'.split('');
-	let color = '#';
-	for (let i = 0; i < 6; i++ ) {
-		color += letters[Math.floor(Math.random() * letters.length)];
+	const letters = '456789ABCDEF'.split('')
+	let color = '#'
+	for (let i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * letters.length)]
 	}
-	return color;
+	return color
 }
-
 
 export const Blob: React.FC<{
 	colors: string[]
@@ -41,14 +41,16 @@ export const Blob: React.FC<{
 	starty: string
 	size: string
 }> = ({ colors, startx, starty, size }) => {
-	const [x,y] = useStart();
+	const [x, y] = useStart()
 
 	return (
 		<motion.div
 			style={{
 				borderRadius: '30% 50% 20% 40%',
 				backgroundColor: colors[0],
-				background: `radial-gradient(circle, ${getColor() || colors[0]} 0%,  ${getColor() || colors[1]} 100%);`,
+				background: `radial-gradient(circle, ${getColor() || colors[0]} 0%,  ${
+					getColor() || colors[1]
+				} 100%);`,
 				height: size,
 				width: size,
 				animation: `transform 40s ease-in-out infinite both alternate, movement${sample(
@@ -57,7 +59,7 @@ export const Blob: React.FC<{
 				opacity: 0.7,
 				position: 'absolute',
 				left: x,
-				top: y
+				top: y,
 			}}
 		/>
 	)
