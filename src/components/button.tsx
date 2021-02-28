@@ -9,11 +9,12 @@ export const Button: React.FC<{
 	highlighted?: boolean
 	component?: any
 	styles?: any
+	inverted?: boolean
 	_hover?: any
-}> = ({ text, highlighted, component, children, styles, _hover }) => {
+}> = ({ text, inverted, highlighted, component, children, styles, _hover }) => {
 	const Component = component || motion.h2
 	return (
-		<>
+		<span data-aos="fade-in">
 			<Component
 				// className={styles.button}
 				whileHover={{
@@ -29,6 +30,7 @@ export const Button: React.FC<{
 				style={{
 					opacity: 1,
 					padding: '1rem',
+					display: 'inline-block',
 					// borderColor:theme.colors.color,
 					//
 					// borderRadius:'0.25rem',
@@ -59,6 +61,6 @@ export const Button: React.FC<{
 				}
 			`}
 		</style> */}
-		</>
+		</span>
 	)
 }
