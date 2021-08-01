@@ -109,8 +109,6 @@ const Home: React.FC<{
 						i've been programming for ~7 years now, and i've found a niche
 						building performant GQL APIs, NextJS apps, and conducting research &
 						business at early-stage startups. <br /> <br />
-						i'm not looking for internships at the moment, but i will be open in
-						summer 2021.
 					</Text>
 				</motion.section>
 				<motion.h1>works</motion.h1>
@@ -149,9 +147,7 @@ const Home: React.FC<{
 							</Button>
 						</h1>
 						<p>
-							dev-first currency toolset for the Hack Club community. capable of
-							handling thousands of concurrent requests, used by hundreds.
-							demoed at community all-hands in February.{' '}
+							dev-first currency toolset for the Hack Club community. 
 						</p>
 					</section>
 					<section className="X3" data-aos="fade-up">
